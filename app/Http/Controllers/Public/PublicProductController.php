@@ -33,11 +33,12 @@ class PublicProductController extends Controller
     }
     public function productsCategory(Category $category)
     {
+      
         $companies = Product::where('visibility', true)->groupBy('company')->get();
         $colors = Product::where('visibility', 1)->groupBy('color')->get('color');
         $categories = Category::get();
         $products = $category->product->paginate(12);
-    
+
         return view('public.product', [
             'products' => $products,
             'categories' => $categories,
@@ -45,10 +46,11 @@ class PublicProductController extends Controller
             'colors'   => $colors,
 
         ]);
-
     }
+
     public function showProduct($productId)
     {
+       
         $product = Product::find($productId);
         if ($product->visibility == false && $product->category->visibility == false)
             abort(404);
@@ -57,17 +59,7 @@ class PublicProductController extends Controller
         $product->click += 1;
         $product->save();
 
-        // this user click on this product
-        if (auth()->user()) {
-            $user = User::find(auth()->user()->id);
-            if (!$user->productActivity->find($product->id))
-                $user->productActivity()->attach([$product->id => ['click' => 1, 'added_to_cart' => 0, 'request' => 0, 'bought' => 0]]);
-            else {
-
-                $user->productActivity->find($product->id)->userActivity->click += 1;
-                $user->productActivity->find($product->id)->userActivity->save();
-            }
-        }
+        (new ProductService())->this_customer_clicked_this_product($product);
 
         return view('public.singleProduct', [
             'product'  =>  $product,

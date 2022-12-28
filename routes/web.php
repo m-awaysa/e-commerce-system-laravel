@@ -150,7 +150,7 @@ Route::group([], function () {
     //public routes
     Route::get('/home', [HomeController::class, 'index'])->name('home');
     Route::get('/product', [PublicProductController::class, 'index'])->name('public.products');
-    Route::get('/product/{category}', [PublicProductController::class, 'productsCategory'])->name('public.category.products');
+    Route::get('/product/{category}/product', [PublicProductController::class, 'productsCategory'])->name('public.category.products');
     Route::get('/product/{product}', [PublicProductController::class, 'showProduct'])->name('public.products.product');
     Route::get('/search', [PublicProductController::class, 'search'])->name('search');
     Route::get('/category', [PublicCategoryController::class, 'index'])->name('public.category');

@@ -46,11 +46,10 @@ class CartProduct extends Component
         }
       }
     } else {
-
-   return $this->dispatchBrowserEvent('guestOrderEvent', ['id' => $productId]);
-
+      $product = Product::find($productId);
+      return $this->dispatchBrowserEvent('guestOrderEvent', ['id' => $productId, 'amount' => $product->amount]);
     }
- 
+
     $this->emit('cart_updated');
     $this->emit('cart_changed');
   }

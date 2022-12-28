@@ -13,7 +13,8 @@
               </div>
               @endif
               <div class="col-lg-7">
-                <h5 class="mb-3"><a href="{{route('public.products')}}" class="text-body"><i class="fas fa-long-arrow-alt-left me-2"></i>Continue shopping</a></h5>
+                <h5 class="mb-3"><a href="{{route('public.products')}}" class="text-body"><i
+                      class="fas fa-long-arrow-alt-left me-2"></i>Continue shopping</a></h5>
                 <hr>
 
                 <div class="d-flex justify-content-between align-items-center mb-4">
@@ -46,7 +47,8 @@
                       <form class="mt-4">
                         <div class="form-outline form-white mb-4">
                           <label class="form-label" for="invoice_name">invoice's Name:</label>
-                          <input type="text" name="invoice_name" id="typeName" class="form-control form-control-lg" placeholder="invoice's Name" value="{{old('invoice_name')}}" />
+                          <input type="text" name="invoice_name" id="typeName" class="form-control form-control-lg"
+                            placeholder="invoice's Name" value="{{old('invoice_name')}}" />
                           @error('invoice_name')
                           <div class="text-danger">{{$message}}</div>
                           @enderror
@@ -54,7 +56,8 @@
 
                         <div class="form-outline form-white mb-4">
                           <label class="form-label" for="city">City:</label>
-                          <input type="text" name="city" id="typeText" class="form-control form-control-lg" placeholder="City" value="{{old('city')}}" />
+                          <input type="text" name="city" id="typeText" class="form-control form-control-lg"
+                            placeholder="City" value="{{old('city')}}" />
                           @error('city')
                           <div class="text-danger">{{$message}}</div>
                           @enderror
@@ -62,7 +65,8 @@
 
                         <div class="form-outline form-white mb-4">
                           <label class="form-label" for="street">House/floor/room Number/Street (optional):</label>
-                          <input type="text" name="street" id="typeText" class="form-control form-control-lg" placeholder="House/floor/room Number/Street " value="{{old('street')}}" />
+                          <input type="text" name="street" id="typeText" class="form-control form-control-lg"
+                            placeholder="House/floor/room Number/Street " value="{{old('street')}}" />
                           @error('street')
                           <div class="text-danger">{{$message}}</div>
                           @enderror
@@ -70,24 +74,21 @@
 
                         <div class="form-outline form-white mb-4">
                           <label class="form-label" for="phone_number">Phone number:</label>
-                          <input type="number" name="phone_number" id="typeText" class="form-control form-control-lg" placeholder="Phone Number" value="{{old('phone_number')}}" />
+                          <input type="number" name="phone_number" id="typeText" class="form-control form-control-lg"
+                            placeholder="Phone Number" value="{{old('phone_number')}}" />
                           @error('phone_number')
                           <div class="text-danger">{{$message}}</div>
                           @enderror
                         </div>
 
-
-
                         <div class="form-outline form-white mb-4">
                           <label class="form-label" for="note">Notes:</label>
-                          <input type="text" name="note" id="typeText" class="form-control form-control-lg" placeholder="Note" value="{{old('note')}}" />
+                          <input type="text" name="note" id="typeText" class="form-control form-control-lg"
+                            placeholder="Note" value="{{old('note')}}" />
                           @error('note')
                           <div class="text-danger">{{$message}}</div>
                           @enderror
                         </div>
-
-
-
 
                       </form>
 

@@ -13,7 +13,8 @@
     <!-- Styles  -->
     <link rel="stylesheet" href="{{asset('css/publicStyle.css')}}">
     <!-- bootstrap cdn -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 
 
     @livewireStyles
@@ -25,7 +26,8 @@
     <section class="home ">
         <div class="top-bar  nav shadow-1 navbar navbar-expand-lg">
 
-            <button class="navbar-toggler btn btn-lg rounded-0 " type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+            <button class="navbar-toggler btn btn-lg rounded-0 " type="button" data-bs-toggle="collapse"
+                data-bs-target="#navmenu">
                 <i class='bx bx-menu text-light'></i>
             </button>
             <!-- search form -->
@@ -101,14 +103,14 @@
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
         @enderror
-        
+
         @error('company_name')
         <div class="alert alert-danger alert-dismissible fade show" role="alert">
             <strong> {{$message}}</strong>
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
         @enderror
-        
+
         @error('phone_number')
         <div class="alert alert-danger alert-dismissible fade show" role="alert">
             <strong> {{$message}}</strong>
@@ -145,5 +147,3 @@
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
         @enderror
-
-  

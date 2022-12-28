@@ -13,7 +13,9 @@
     <!-- bootstrap -->
     <!-- <link href="{{asset('css/all.min.css')}}" rel="stylesheet" type="text/css"> -->
     <!-- Custom fonts for this template-->
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
     <!-- Custom styles for this template-->
     <link href="{{asset('css/sb-admin-2.min.css')}}" rel="stylesheet">
     <link href="{{asset('css/adminStyle.css')}}" rel="stylesheet">
@@ -24,11 +26,13 @@
     <!-- jquery  -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <!-- bootstrap cdn -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous">
+    </script>
     <link href=" https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- links to use multiselect list  -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.css" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.css" />
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
 
@@ -85,7 +89,7 @@
                     <i class="fa-solid fa-shop text-light"></i>
                     <span>Orders</span>
                     <span class="badge badge-danger badge-counter mt-1">
-                    +{{\App\Http\Controllers\Admin\OrderController::getOrderRequestCount()}}
+                        +{{\App\Http\Controllers\Admin\OrderController::getOrderRequestCount()}}
                     </span>
                 </a>
             </li>
@@ -95,13 +99,14 @@
                     <i class="fa-solid fa-user-tie text-light"></i>
                     <span>Salesman</span>
                     <span class="badge badge-danger badge-counter mt-1">
-                    +{{\App\Http\Controllers\Admin\SalesmanController::getRequestCount()}}
+                        +{{\App\Http\Controllers\Admin\SalesmanController::getRequestCount()}}
                     </span>
                 </a>
             </li>
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+                    aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-fw fa-cog"></i>
                     <span>Layouts</span>
                 </a>
@@ -154,7 +159,8 @@
 
                         <!-- Nav Item - User Information -->
                         <li class="nav-item  no-arrow">
-                            <span class="mr-2 d-none d-sm-inline text-gray-600 small">{{auth()->user()->first_name}} {{auth()->user()->last_name}}</span>
+                            <span class="mr-2 d-none d-sm-inline text-gray-600 small">{{auth()->user()->first_name}}
+                                {{auth()->user()->last_name}}</span>
 
 
                         </li>
@@ -167,5 +173,3 @@
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
-
-                

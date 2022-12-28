@@ -4,7 +4,7 @@ namespace App\Services\Public;
 
 use App\Models\Product;
 use App\Models\Category;
-use Illuminate\Pagination\LengthAwarePaginator;
+use App\Models\User;
 class ProductService
 {
 
@@ -49,5 +49,26 @@ class ProductService
         }
 
         return $products;
+    }
+
+    public function this_customer_clicked_this_product(Product $product){
+        if (auth()->user()) {
+            $user = User::find(auth()->user()->id);
+            if (!$user->productActivity->find($product->id))
+                $user->productActivity()->attach([$product->id => ['click' => 1, 'added_to_cart' => 0, 'request' => 0, 'bought' => 0]]);
+            else {
+                $user->productActivity->find($product->id)->userActivity->click += 1;
+                $user->productActivity->find($product->id)->userActivity->save();
+            }
+        }else{
+            //id=1 reserved for guests
+            $user = User::find(1);
+            if (!$user->productActivity->find($product->id))
+                $user->productActivity()->attach([$product->id => ['click' => 1, 'added_to_cart' => 0, 'request' => 0, 'bought' => 0]]);
+            else {
+                $user->productActivity->find($product->id)->userActivity->click += 1;
+                $user->productActivity->find($product->id)->userActivity->save();
+            }
+        }
     }
 }
