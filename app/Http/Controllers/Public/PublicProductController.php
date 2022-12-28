@@ -16,7 +16,7 @@ class PublicProductController extends Controller
         $companies = Product::where('visibility', true)->groupBy('company')->get();
         $colors = Product::where('visibility', 1)->groupBy('color')->get('color');
         $categories = Category::get();
-       //filter
+        //filter
         $products =  (new ProductService())->get_the_product(
             $category,
             $request->category,
@@ -31,7 +31,22 @@ class PublicProductController extends Controller
 
         ]);
     }
+    public function productsCategory(Category $category)
+    {
+        $companies = Product::where('visibility', true)->groupBy('company')->get();
+        $colors = Product::where('visibility', 1)->groupBy('color')->get('color');
+        $categories = Category::get();
+        $products = $category->product->paginate(12);
+    
+        return view('public.product', [
+            'products' => $products,
+            'categories' => $categories,
+            'companies' => $companies,
+            'colors'   => $colors,
 
+        ]);
+
+    }
     public function showProduct($productId)
     {
         $product = Product::find($productId);
@@ -65,16 +80,16 @@ class PublicProductController extends Controller
         $products = $request->search != null ?
             Product::where('visibility', true)->Where('name', 'LIKE', '%' . $request->search . '%')->paginate(12) :
             null;
-            $companies = Product::where('visibility', true)->groupBy('company')->get();
-            $colors = Product::where('visibility', 1)->groupBy('color')->get('color');
-            $categories = Category::get();
-    
-            return view('public.product', [
-                'products' => $products,
-                'categories' => $categories,
-                'companies' => $companies,
-                'colors'   => $colors,
-    
-            ]);
+        $companies = Product::where('visibility', true)->groupBy('company')->get();
+        $colors = Product::where('visibility', 1)->groupBy('color')->get('color');
+        $categories = Category::get();
+
+        return view('public.product', [
+            'products' => $products,
+            'categories' => $categories,
+            'companies' => $companies,
+            'colors'   => $colors,
+
+        ]);
     }
 }

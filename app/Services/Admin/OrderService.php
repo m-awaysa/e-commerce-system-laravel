@@ -5,6 +5,7 @@ namespace app\Services\Admin;
 use App\Models\User;
 use App\Models\order;
 use App\Models\sale;
+use App\Models\Product;
 use Illuminate\Support\Collection;
 
 class OrderService
@@ -44,7 +45,7 @@ class OrderService
      * @param User $users
      * @param Collection<UserProduct> $cart_Product
      */
-    public function product_price(User $user, Collection $product): int
+    public function product_price(User $user,Product $product): int
     {
         $discount =  $this->discount($user, $product);
 
@@ -52,13 +53,13 @@ class OrderService
     }
 
 
-    public function discount(User $user, Collection $product): float
+    public function discount(User $user, Product $product): float
     {
         return  $product->discount > $user->discount ?
             $product->discount :  $user->discount;
     }
 
-    public function this_user_request_this_product(User $user, Collection $cartProduct): void
+    public function this_user_request_this_product(User $user, Product $cartProduct): void
     {
         // this user request this product  
         if (!$user->productActivity->find($cartProduct->id)) {
@@ -76,7 +77,7 @@ class OrderService
         }
     }
 
-    public function this_user_bought_this_product(User $user, Collection $product): void
+    public function this_user_bought_this_product(User $user, Sale $product): void
     {
         if ($user->productActivity->find($product->product_id) == null) {
             $user->productActivity()->attach(
@@ -105,12 +106,14 @@ class OrderService
                 $user->productActivity->find($sale->product->id)->userActivity->bought -= $sale->amount;
                 $user->productActivity->find($sale->product->id)->userActivity->save();
             }
-        } else {
-            if (User::find($order->user_id) &&  User::find($order->user_id)->productActivity->find($sale->product->id)) {
-                $user = User::find($order->user_id);
-                $user->productActivity->find($sale->product->id)->userActivity->request -= $sale->amount;
-                $user->productActivity->find($sale->product->id)->userActivity->save();
-            }
         }
+        //    do not remove requested count (for collecting data)
+        //  else {
+        //     if (User::find($order->user_id) &&  User::find($order->user_id)->productActivity->find($sale->product->id)) {
+        //         $user = User::find($order->user_id);
+        //         $user->productActivity->find($sale->product->id)->userActivity->request -= $sale->amount;
+        //         $user->productActivity->find($sale->product->id)->userActivity->save();
+        //     }
+        // }
     }
 }

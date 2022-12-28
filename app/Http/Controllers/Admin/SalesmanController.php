@@ -13,7 +13,8 @@ class SalesmanController extends Controller
 {
     public function index(Request $request)
     {
-        $salesmen =   User::where('active', 1)->where('role', 0)->paginate(30);
+        //id=1 is reserved for guest
+        $salesmen =   User::where('active', 1)->where('role', 0)->where('id','!=','1')->paginate(30);
         $pendingCount = User::where('active', 0)->count();
 
         return view('admin.salesman.list', [

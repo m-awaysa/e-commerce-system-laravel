@@ -7,7 +7,7 @@
 @foreach($categories as $category)
 
 <div class="bg-light  single-product border-end-1 border  " id="me">
-    <a class="text-dark" href="{{route('public.products',$category)}}">
+    <a class="text-dark" href="{{route('public.category.products',$category)}}">
         <div class="card-body-item">
 
             <div class="home-image-content">
