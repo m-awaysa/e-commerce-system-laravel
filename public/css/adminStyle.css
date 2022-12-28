@@ -1,0 +1,102 @@
+
+
+/*responsive*/
+
+
+
+@media(max-width: 1160px){
+	.order-table thead{
+		display: none;
+	}
+
+	.order-table, .order-table tbody, .order-table tr, .order-table td{
+		display: block;
+		width: 100%;
+	}
+	.order-table tr{
+		margin-bottom:15px;
+	}
+	.order-table td{
+		text-align: right;
+		padding-left: 50%;
+		text-align: right;
+		position: relative;
+	}
+	.order-table td::before{
+		content: attr(data-label);
+		position: absolute;
+		left:0;
+		width: 50%;
+		padding-left:15px;
+		font-size:15px;
+		font-weight: bold;
+		text-align: left;
+	}
+}
+
+
+@media(max-width: 1050px){
+	.big-table thead{
+		display: none;
+	}
+
+	.big-table, .big-table tbody, .big-table tr, .big-table td{
+		display: block;
+		width: 100%;
+	}
+	.big-table tr{
+		margin-bottom:15px;
+	}
+	.big-table td{
+		text-align: right;
+		padding-left: 50%;
+		text-align: right;
+		position: relative;
+	}
+	.big-table td::before{
+		content: attr(data-label);
+		position: absolute;
+		left:0;
+		width: 50%;
+		padding-left:15px;
+		font-size:15px;
+		font-weight: bold;
+		text-align: left;
+	}
+}
+
+
+
+
+
+@media(max-width: 640px){
+	.table thead{
+		display: none;
+	}
+
+	.table, .table tbody, .table tr, .table td{
+		display: block;
+		width: 100%;
+	}
+	.table tr{
+		margin-bottom:15px;
+	}
+	.table td{
+		text-align: right;
+		padding-left: 50%;
+		text-align: right;
+		position: relative;
+	}
+	.table td::before{
+		content: attr(data-label);
+		position: absolute;
+		left:0;
+		width: 50%;
+		padding-left:15px;
+		font-size:15px;
+		font-weight: bold;
+		text-align: left;
+	}
+}
+
+

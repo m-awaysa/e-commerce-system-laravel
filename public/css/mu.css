@@ -1,0 +1,159 @@
+/* Google Font Import - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    background-color: #E4E9F7 !important;
+
+}
+
+button.nav-btn-toggler{
+    background-color: black;
+    position: relative;
+    margin: 0;
+    padding: 2%;
+    
+}
+
+.logo-text{
+   
+     opacity: 0.9;
+     font-size: 1.5em ;
+     font-weight: 800;
+
+}
+
+a.navbar-brand{
+    align-items: flex-start;
+}
+.nav-group-all{
+    background-color: rgba(255, 255, 255, 0);
+}
+a.navbar-brand{
+    margin-left: 1% !important;
+}
+.box{
+  
+  max-width: 400px;
+  width: 100%;
+
+}
+.box .search-box{
+    position: relative;
+    height: 50px;
+    max-width: 50px;
+    margin: auto;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 25px;
+    transition: all 0.3s ease;
+  }
+#check:checked ~ .search-box{
+  max-width: 380px;
+}
+.search-box input{
+ position: absolute;
+ height: 100%;
+ width: 100%;
+ border-radius: 25px;
+ background: #fff;
+ outline: none;
+ border: none;
+ padding-left: 20px;
+ font-size: 18px;
+}
+
+
+.search-box .icon{
+    position: absolute;
+    right: -2px;
+    top: 0;
+    width: 50px;
+    background: #FFF;
+    height: 100%;
+    text-align: center;
+    line-height: 50px;
+    color: #6216b9;
+    font-size: 20px;
+    border-radius: 25px;
+  }
+  #check:checked ~ .search-box .icon{
+    background: #9d26c2;
+    color: #FFF;
+    width: 60px;
+    border-radius: 0 25px 25px 0;
+  }
+
+
+
+#check{
+  display: none;
+}
+.box-end {
+    justify-content: right !important;
+    background-color: black;
+    position: relative;
+    padding: 2.1%;
+}
+.fa-regular {
+    font-weight: 900 !important;
+ 
+}
+.logo-btn{
+    position: relative;
+    display: flex;
+    justify-content: flex-start !important;
+}
+
+
+
+@media (max-width: 740px) {
+    .logo-text {
+    display: none;
+    }
+    .navbar{
+        justify-content: space-between !important;
+    }
+    .box .search-box-menu{
+       
+        max-width: 300px;
+      
+      }
+      .box{
+  
+        max-width: 330px;
+        width: 100%;
+      
+      }
+    }
+    @media (max-width: 500px) {
+        .navbar {
+            align-items: flex-start;
+        }
+      
+        .box .search-box-menu{
+       
+            max-width: 225px;
+          
+          }
+          .box{
+      
+            max-width: 240px;
+            width: 100%;
+          
+          }
+       
+        
+       
+        }
+        @media (max-width: 300px)
+        {
+            .box .search-box-menu{
+                border-radius: 0;
+                    
+                   }
+        }
+  
