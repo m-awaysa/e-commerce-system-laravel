@@ -9,7 +9,7 @@
         <h5 class="text-success">Email: guest@admin.com</h5>
         <h5 class="text-success">Password: guestguest</h5>
         <h6 class="text-danger ">*The website will refresh at 00:00 AM (GMT+2) every day, all changes will be removed or
-            you can refresh the site from the dashboard*</h6>
+            you can refresh the website from the dashboard*</h6>
         <h2>salesman account:</h2>
         <h5 class="text-success">Email: guest@user.com</h5>
         <h5 class="text-success">Password: guestguest</h5>
@@ -75,7 +75,7 @@
                 account.</li>
             <li class="list-group-item">Account requests button: It will display the table containing account requests.
             </li>
-            <li class="list-group-item">Registering on the public site will send an account request to the admin.</li>
+            <li class="list-group-item">Registering on the public website will send an account request to the admin.</li>
             <li class="list-group-item">Admin can either accept or decline the request.</li>
         </ol>
         <h5>5. Order</h5>
@@ -146,7 +146,7 @@
         </ol>
         <h3>Guest</h3>
         <ol class=" list-group-numbered">
-            <li class="list-group-item">Guest can see the public site but cant see the price,discount or the cart.</li>
+            <li class="list-group-item">Guest can see the public website but cant see the price,discount or the cart.</li>
             <li class="list-group-item">Guest can order product by clicking on order button and fill the form that
                 appears</li>
             <img src="{{asset('images/guest-order-modal.png')}}" alt="..." style="max-width:100%; ">
