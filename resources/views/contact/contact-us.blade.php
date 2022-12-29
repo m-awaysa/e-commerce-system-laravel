@@ -16,7 +16,7 @@
         <!--   Name -->
         <div class="mb-3 mail-group">
             <label class="mail-label" for="mail_name ">Email:</label>
-            <input type="text " id="email" name="email" placeholder="Email" class="mail-item row m-1 col-lg-5 border col-11 shadow " value="{{old('email')}}">
+            <input type="text " id="email" name="email" placeholder="Email" class="p-1 mail-item row m-1 col-lg-5 border col-11 shadow " value="{{old('email')}}">
             @error('email')
             <div class="text-danger">{{$message}}</div>
             @enderror
@@ -24,7 +24,7 @@
         <!--   Mail subject -->
         <div class="mb-3  mail-group">
             <label class="mail-label" for="mail_subject">Mail Subject:</label>
-            <input type="text " id="mail_subject" name="mail_subject" placeholder="Mail subject" class="mail-item row m-1 col-lg-5 border col-11 shadow" value="{{old('mail_subject')}}">
+            <input type="text " id="mail_subject" name="mail_subject" placeholder="Mail subject" class="p-1 mail-item row m-1 col-lg-5 border col-11 shadow" value="{{old('mail_subject')}}">
         </div>
 
         @error('mail_subject')
@@ -36,7 +36,7 @@
 
         <div class="mb-3  mail-group">
             <label class="mail-label" for="mail_body">Mail Body:</label>
-            <textarea name="mail_body" id="mail_body" cols="30" rows="4" class="mail-item col-lg-5 col-11 placeholder-glow row mx-1 shadow bg-gray rounded-0 " placeholder="Description"> {{old('mail_body')}}</textarea>
+            <textarea name="mail_body" id="mail_body" cols="30" rows="4" class="p-1 mail-item col-lg-5 col-11 placeholder-glow row mx-1 shadow bg-gray rounded-0 " placeholder="Description"> {{old('mail_body')}}</textarea>
             @error('mail_body')
             <div class="text-danger">{{$message}}</div>
             @enderror
