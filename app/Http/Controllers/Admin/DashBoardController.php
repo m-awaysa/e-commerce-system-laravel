@@ -4,10 +4,10 @@ namespace App\Http\Controllers\Admin;
 
 use Carbon\Carbon;
 use App\Http\Controllers\Controller;
-use App\MOdels\Order;
-use App\MOdels\Sale;
-use App\MOdels\Product;
-use App\MOdels\User;
+use App\Models\Order;
+use App\Models\Sale;
+use App\Models\Product;
+use App\Models\User;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\File;
 use App\Services\Admin\DashboardService;
