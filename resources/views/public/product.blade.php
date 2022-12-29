@@ -124,16 +124,16 @@
             @empty
             <p class="text-danger justify-content-md-end">There is no Product!! </p>
             @endforelse
-
-
             <br>
-            {{$products-> links()}}
-
+          
         </div>
-
+       
     </div>
-
+    <div class="paginate-content" >
+    {{$products-> links()}}
 </div>
+</div>
+
 
 <!-- Modal -->
 <div class="modal fade" id="guestmodal" tabindex="-1" aria-labelledby="guestmodal" aria-hidden="true">

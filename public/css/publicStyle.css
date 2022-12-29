@@ -113,7 +113,12 @@ a.footer-content {
 
 }
 
+.paginate-content{
+    position: relative;
+   left: 20% !important; 
+   float:left;
 
+}
 .side-product-filter{
     position: relative;
     max-width: 20% !important;
@@ -819,6 +824,9 @@ top: 10%;
           
         box-shadow: 0rem 0.5rem 0rem 0rem rgba(0,0,0,.15)!important;
       }
+      .paginate-content{
+       left: 35% !important; 
+    }
       .side-product-filter{
         position: relative;
         max-width: 35% !important;
@@ -925,6 +933,9 @@ body.body {
         box-shadow: 0rem 0.5rem 0rem 0rem rgba(0,0,0,.15)!important;
       
       }
+      .paginate-content{
+        left: 32% !important; 
+     }
       .side-product-filter{
      position: relative;
         max-width: 32% !important;
