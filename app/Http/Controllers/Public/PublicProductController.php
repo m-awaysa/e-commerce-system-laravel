@@ -71,7 +71,11 @@ class PublicProductController extends Controller
     {
         $products = $request->search != null ?
             Product::where('visibility', true)->Where('name', 'LIKE', '%' . $request->search . '%')->paginate(12) :
-            null;
+            $products = Product::where('visibility', true)
+            ->whereHas('category', function ($order) {
+                $order->where('visibility', true);
+            })->paginate(12);
+
         $companies = Product::where('visibility', true)->groupBy('company')->get();
         $colors = Product::where('visibility', 1)->groupBy('color')->get('color');
         $categories = Category::get();

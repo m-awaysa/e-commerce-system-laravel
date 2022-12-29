@@ -48,7 +48,7 @@
 
 
 
-<div class="div-info">
+<div class="div-info ">
   <div class="pb-4 product-name fs-2 fw-bold">{{$product->name}}</div>
   <table class="table-info">
     @auth
