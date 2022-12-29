@@ -33,6 +33,7 @@ class ProductController extends Controller
                 $product = $category->product()->with('category')->paginate();
                 array_push($arrayProducts,  $product);
             }
+            
         } else {
             $product = Product::with('category')->paginate(20);
             array_push($arrayProducts,  $product);
