@@ -18,7 +18,9 @@ class ProductService
             if ($filteredCategory  != null ||  $filteredCompany  != null ||  $filteredColor  != null) {
 
                 if ($filteredCategory  != null){
-                    $products = Product::where('visibility', true)->whereIn('category_id',  $filteredCategory)->paginate(12);
+                    $products = Product::where('visibility', true)->where(function($query){
+                        return $query->category->where('visibility', true);
+                    })->whereIn('category_id',  $filteredCategory)->paginate(12);
                 }
                    
                 else
@@ -29,23 +31,31 @@ class ProductService
                     if ($products !=null)
                         $products = $products->whereIn('company',  $filteredCompany)->paginate(12);
                     else
-                        $products = Product::where('visibility', true)->whereIn('company',  $filteredCompany)->paginate(12);
+                        $products = Product::where('visibility', true)->where(function($query){
+                        return $query->category->where('visibility', true);
+                    })->whereIn('company',  $filteredCompany)->paginate(12);
                 }
                 if ($filteredColor != null) {
 
                     if ($products  != null)
                         $products = $products->whereIn('color',  $filteredColor)->paginate(12);
                     else
-                        $products = Product::where('visibility', true)->whereIn('color',  $filteredColor)->paginate(12);
+                        $products = Product::where('visibility', true)->where(function($query){
+                        return $query->category->where('visibility', true);
+                    })->whereIn('color',  $filteredColor)->paginate(12);
                 }
             } else {
 
-                $products = Product::where('visibility', true)->with(['category' => function ($query) {
+                $products = Product::where('visibility', true)->where(function($query){
+                        return $query->category->where('visibility', true);
+                    })->with(['category' => function ($query) {
                     $query->where('visibility', true);
                 }])->paginate(12);
             }
         } else {
-            $products = $category->product->where('visibility', true)->paginate(12);
+            $products = $category->product->where('visibility', true)->where(function($query){
+                        return $query->category->where('visibility', true);
+                    })->paginate(12);
         }
 
         return $products;
