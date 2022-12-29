@@ -119,7 +119,7 @@
             @empty
             <p class="text-danger justify-content-md-end">There is no Product!! </p>
             @endforelse
-@endif
+          
             <br>
 
         </div>
@@ -128,6 +128,7 @@
     <div class="paginate-content">
         {{$products-> links()}}
     </div>
+    @endif
 </div>
 
 
