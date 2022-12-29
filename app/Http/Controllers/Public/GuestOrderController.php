@@ -70,6 +70,10 @@ class GuestOrderController extends Controller
     {
 
         foreach ($request->amounts as  $id => $value) {
+            if($value <1){
+                return redirect()->route('guest.order.pending')
+                ->with('error', 'amount cant be smaller than 1');
+            }
             GuestOrder::find($id)->update([
                 'amount' => $request->amounts[$id],
             ]);
@@ -91,8 +95,18 @@ class GuestOrderController extends Controller
 
     public function accept(GuestOrder $order)
     {
+        if( $order->product->amount >= $order->amount){
+            $order->product->amount -= $order->amount;
+            $order->product->save();
+        }else{
+            return redirect()->route('guest.order.pending')
+            ->with('error', 'there is '.$order->product->amount.' '.$order->product->name.' left in the stock');
+        }
+        if($order->amount){
+     
         $order->status = 'sold';
         $order->save();
+
         if ($order->product) {
             $product = $order->product;
             $soldOrder =   Order::create([
@@ -120,7 +134,7 @@ class GuestOrderController extends Controller
 
 
             ]);
-
+          
 
             // guest user bought this product (add to product activity) 
             //to call model methods
@@ -139,4 +153,5 @@ class GuestOrderController extends Controller
             return redirect()->route('guest.order.pending')->with('error', 'product not found');
         }
     }
+}
 }

@@ -13,7 +13,7 @@
     </div>
     @endif
     @if(session('error'))
-    <div class="alert alert-success alert-dismissible fade show" role="alert">
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
         <strong> {{session('error')}}</strong>
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
@@ -54,10 +54,10 @@
                         <form action="{{route('guest.order.editAmount')}}" method="post">
                             @csrf
                             <td data-label="Amount" class="col-1">
-                                <input class="col" type="number" name="amounts[{{$order->id}}]" value="{{$order->amount}}">
+                                <input class="col" type="number" name="amounts[{{$order->id}}]" value="{{$order->amount}}" min="1" >
                             </td>
                             <td data-label="Price" class="col-1">
-                                <input class="col" type="number" name="sold_prices[{{$order->id}}]" value="{{$order->sold_price}}">
+                                <input class="col" type="number" name="sold_prices[{{$order->id}}]" value="{{$order->sold_price}}" min="1">
                             </td>
 
                             <td data-label="Save">
@@ -73,16 +73,9 @@
                         <td data-label="Company">{{$order->company_name }}</td>
                         <td data-label="Company Number">{{$order->company_number }}</td>
                         <td data-label="Phone Number">{{$order->phone_number }}</td>
-
                         <td data-label="Email">{{$order->email}}</td>
                         <td data-label="Date">{{date('d-m-y',strtotime($order->created_at))}}</td>
                         <td data-label="Status">{{$order->status }}</td>
-
-
-
-
-
-
 
                         <td>
                             <!-- delete button form  -->

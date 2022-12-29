@@ -149,7 +149,7 @@
               <label for="phone_number">Phone Number: </label>
             </div>
             <div>
-              <input type="number" name="phone_number" value="{{old('phone_number')}}" required max="999999999999">
+              <input type="number" name="phone_number" value="{{old('phone_number')}}" required  min="111111111" max="999999999999">
               @error('phone_number')
               <div class="text-danger">{{$message}}</div>
               @enderror

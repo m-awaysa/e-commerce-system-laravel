@@ -27,7 +27,7 @@ class StoreGuestOrderRequest extends FormRequest
             'product' => ['required', 'exists:products,id'],
             'company_name' => ['required', 'string', 'min:2', 'max:255'],
             'company_number' => ['required', 'numeric', 'max:999999999'],
-            'phone_number' => ['required', 'numeric', 'max:999999999'],
+            'phone_number' => ['required', 'numeric','min:111111111','max:999999999'],
             'email' => ['required', 'email', 'max:255', 'min:3'],
             'amount' => ['required', 'numeric', 'min:0', 'max:100'],
             'city' => ['required', 'string', 'min:3', 'max:255'],

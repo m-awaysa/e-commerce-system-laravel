@@ -45,9 +45,9 @@
                         <td>{{$sale->product->name}}</td>
                         <td>{{(int)($sale->sold_price* $sale->amount )}}</td>
 
-                        <td><input class="col  col-7" type="number" name="sold_prices[{{$sale->id}}]" value="{{$sale->sold_price }}"></td>
-                        <td><input class="col col-7" type="number" name="purchased_prices[{{$sale->id}}]" value="{{$sale->purchased_price }}"></td>
-                        <td><input class="col" type="text" name="colors[{{$sale->id}}]" value="{{$sale->color }}"></td>
+                        <td><input class="col  col-7" type="number" name="sold_prices[{{$sale->id}}]" value="{{$sale->sold_price }}" min="1"></td>
+                        <td><input class="col col-7" type="number" name="purchased_prices[{{$sale->id}}]" value="{{$sale->purchased_price }}" min="1"></td>
+                        <td><input class="col" type="text" name="colors[{{$sale->id}}]" value="{{$sale->color }}" min="2"></td>
 
                         </tr>
 
