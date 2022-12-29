@@ -19,7 +19,6 @@ class HomeController extends Controller
             'products' => $products,
             'carouselPart'=>$carouselPart ,
             'homeParts'=> $homeParts,
-           
             'thereIsAnActive'=>$thereIsAnActive
         ]);
     }

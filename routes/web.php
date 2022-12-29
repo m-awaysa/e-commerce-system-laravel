@@ -148,7 +148,7 @@ Route::group(['middleware' => ['auth'],['prefix' => 'email']], function () {
 // guest route
 Route::group([], function () {
     //public routes
-    Route::get('/', [HomeController::class, 'index'])->name('home');
+    Route::get('/home', [HomeController::class, 'index'])->name('home');
     Route::get('/product', [PublicProductController::class, 'index'])->name('public.products');
     Route::get('/product/{category}/product', [PublicProductController::class, 'productsCategory'])->name('public.category.products');
     Route::get('/product/{product}', [PublicProductController::class, 'showProduct'])->name('public.products.product');
