@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Category;
 use App\Models\Sale;
 use App\Models\User;
 use App\Models\Order;
@@ -38,7 +37,7 @@ class OrderController extends Controller
         ]);
     }
 
-
+Sale
     public function request(StoreOrderRequest $request)
     {
 

@@ -4,7 +4,7 @@ namespace app\Services\Admin;
 
 use App\Models\User;
 use App\Models\order;
-use App\Models\sale;
+use App\Models\Sale;
 use App\Models\Product;
 use Illuminate\Support\Collection;
 
