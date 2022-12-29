@@ -10,11 +10,13 @@
     <div class="card shadow mb-4">
         <!-- Card Header - Dropdown -->
         <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-            <h6 class="m-0 font-weight-bold text-primary">Home Page Carousel photos: Add, hide, delete or show photo in home carousel part</h6>
+            <h6 class="m-0 font-weight-bold text-primary">Home Page Carousel photos: Add, hide, delete or show photo in
+                home carousel part</h6>
             @error('image')
             <div class="text-danger">{{$message}}</div>
             @enderror
-            <button class="btn btn-sm btn-primary shadow-sm mt-2" type="button" data-bs-toggle="modal" data-bs-target="#addImageModal">
+            <button class="btn btn-sm btn-primary shadow-sm mt-2" type="button" data-bs-toggle="modal"
+                data-bs-target="#addImageModal">
                 <i class="fa-solid fa-plus"></i> Add Image
             </button>
             @if(session('imageStatus'))
@@ -46,7 +48,8 @@
                         <td data-label="photo">
 
                             <div>
-                                <img src="{{asset('images/productImages/'.$homeImage->image)}}" class="img-fluid rounded-3" alt="Shopping item" style="width: 100px;">
+                                <img src="{{asset('images/productImages/'.$homeImage->image)}}"
+                                    class="img-fluid rounded-3" alt="Shopping item" style="width: 100px;">
                             </div>
                         </td>
 
@@ -54,20 +57,18 @@
 
 
 
-                        <td data-label="Visibility"> <?php if ($homeImage->active) {
+                        <td data-label="Visibility">
+                            <?php if ($homeImage->active) {
                                     echo "true";
                                 } else   echo "false"   ?>
                         </td>
 
-                        <td >
+                        <td>
                             <!-- delete button form -->
-                            <div >
-                                <a class="btn btn-danger btn-sm" onclick="confirmDelete( '<?php echo route('layout.home.image.delete', $homeImage) ?>' )">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
-                                        <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" />
-                                        <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z" />
-                                    </svg>
-
+                            <div>
+                                <a class="btn btn-danger btn-sm"
+                                    onclick="confirmDelete( '<?php echo route('layout.home.image.delete', $homeImage) ?>' )">
+                                    <i class="fa-solid fa-trash"></i>
                                 </a>
                             </div>
                         </td>
@@ -113,7 +114,8 @@
             @error('name')
             <div class="text-danger">{{$message}}</div>
             @enderror
-            <button class="btn btn-sm btn-primary shadow-sm mt-2" type="button" data-bs-toggle="modal" data-bs-target="#addPartModal">
+            <button class="btn btn-sm btn-primary shadow-sm mt-2" type="button" data-bs-toggle="modal"
+                data-bs-target="#addPartModal">
                 <i class="fa-solid fa-plus"></i> New Part
             </button>
 
@@ -147,13 +149,10 @@
                         </td>
                         <td>
                             <!-- delete button form -->
-                            <div >
-                                <a class="btn btn-danger btn-sm" onclick="confirmDelete( '<?php echo route('layout.home.part.delete', $homePart) ?>' )">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
-                                        <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" />
-                                        <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z" />
-                                    </svg>
-
+                            <div>
+                                <a class="btn btn-danger btn-sm"
+                                    onclick="confirmDelete( '<?php echo route('layout.home.part.delete', $homePart) ?>' )">
+                                    <i class="fa-solid fa-trash"></i>
                                 </a>
                             </div>
                         </td>
@@ -190,7 +189,8 @@
             </div>
             <div class="modal-footer">
 
-                <button id="cancelbutton" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <button id="cancelbutton" type="button" class="btn btn-secondary"
+                    data-bs-dismiss="modal">Cancel</button>
 
                 <button type="submit" id="confirmdelete" class="btn btn-primary">Sure</button>
 
@@ -225,7 +225,8 @@
                             <i class="fa-solid fa-plus"></i> Save Image
                         </button>
 
-                        <button type="button" class="btn btn-secondary mt-2 btn-sm" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-secondary mt-2 btn-sm"
+                            data-bs-dismiss="modal">Close</button>
                     </div>
                 </form>
 
@@ -257,7 +258,8 @@
                         <button type="submit" class="btn btn-primary mt-2 btn-sm">New Part</button>
 
 
-                        <button type="button" class="btn btn-secondary mt-2 btn-sm" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-secondary mt-2 btn-sm"
+                            data-bs-dismiss="modal">Close</button>
                     </div>
                 </form>
 
