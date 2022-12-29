@@ -24,7 +24,7 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\PasswordResetController;
 use App\Http\Controllers\Auth\EmailVerificationController;
 
-use App\Http\Controllers\contact\ContactController;
+use App\Http\Controllers\Contact\ContactController;
 
 Route::group(['middleware' => ['auth', 'verified']], function () {
 
