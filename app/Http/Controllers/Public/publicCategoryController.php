@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Category;
 
 
-class publicCategoryController extends Controller
+class PublicCategoryController extends Controller
 {
     public function index(){
      

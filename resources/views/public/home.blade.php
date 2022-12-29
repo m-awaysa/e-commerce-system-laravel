@@ -1,7 +1,4 @@
 @include('layouts.publicHeader')
-
-
-
 <div id="carousel" class="carousel slide " data-bs-ride="true">
   <div class="carousel-indicators">
     <button type="button" data-bs-target="#carousel" data-bs-slide-to="0" class="active carousel-btn"
@@ -29,14 +26,7 @@
       No new deals at the moment
     </div>
     @endforelse
-
-
-
-
   </div>
-
-
-
   <button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Previous</span>

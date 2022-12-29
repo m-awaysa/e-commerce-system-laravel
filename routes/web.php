@@ -6,7 +6,7 @@ use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\SalesmanController;
 use App\Http\Controllers\Admin\LayoutController;
-use App\Http\Controllers\Admin\SaleController;
+// use App\Http\Controllers\Admin\SaleController;
 use App\Http\Controllers\Admin\OrderController;
 
 use App\Http\Controllers\Public\HomeController;
@@ -90,13 +90,13 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
             });
         });
 
-        //sales routes (auth,verified, is_admin). 
-        Route::group(['prefix' => 'sales'], function () {
-            Route::get('', [SaleController::class, 'index'])->name('sales');
-            Route::get('/delete/{product}', [SaleController::class, 'delete'])->name('sales.delete');
-            Route::get('/edit/{product}', [SaleController::class, 'viewEdit'])->name('sales.edit');
-            Route::post('/edit/{product}', [SaleController::class, 'edit'])->name('sales.edit');
-        });
+        // //sales routes (auth,verified, is_admin). 
+        // Route::group(['prefix' => 'sales'], function () {
+        //     Route::get('', [SaleController::class, 'index'])->name('sales');
+        //     Route::get('/delete/{product}', [SaleController::class, 'delete'])->name('sales.delete');
+        //     Route::get('/edit/{product}', [SaleController::class, 'viewEdit'])->name('sales.edit');
+        //     Route::post('/edit/{product}', [SaleController::class, 'edit'])->name('sales.edit');
+       // });
 
         //order routes (auth,verified, is_admin)
         Route::group(['prefix' => 'order'], function () {
