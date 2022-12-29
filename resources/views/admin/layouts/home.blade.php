@@ -10,7 +10,7 @@
     <div class="card shadow mb-4">
         <!-- Card Header - Dropdown -->
         <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-            <h6 class="m-0 font-weight-bold text-primary">Home Carousel photo: Add, hide, delete or show photo in home carousel part</h6>
+            <h6 class="m-0 font-weight-bold text-primary">Home Page Carousel photos: Add, hide, delete or show photo in home carousel part</h6>
             @error('image')
             <div class="text-danger">{{$message}}</div>
             @enderror
@@ -109,7 +109,7 @@
     <div class="card shadow mb-4">
         <!-- Card Header - Dropdown -->
         <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-            <h6 class="m-0 font-weight-bold text-primary">Home parts</h6>
+            <h6 class="m-0 font-weight-bold text-primary">Home Page parts</h6>
             @error('name')
             <div class="text-danger">{{$message}}</div>
             @enderror
