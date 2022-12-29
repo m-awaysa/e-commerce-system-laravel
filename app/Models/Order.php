@@ -27,7 +27,7 @@ class Order extends Model
     }
 
     public function sale (){
-        return $this->hasMany(sale::class);
+        return $this->hasMany(Sale::class);
     }
 
 

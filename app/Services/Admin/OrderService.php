@@ -3,7 +3,7 @@
 namespace app\Services\Admin;
 
 use App\Models\User;
-use App\Models\order;
+use App\Models\Order;
 use App\Models\Sale;
 use App\Models\Product;
 use Illuminate\Support\Collection;
