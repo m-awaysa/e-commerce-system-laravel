@@ -136,6 +136,30 @@ class OrderSeeder extends Seeder
                 'street' =>'this is street',
                 'status' =>'sold',
             ],  
+            [
+                'id'=>21,
+                'user_id'=>2,
+                'created_at'=>'2023-1-1 15:25:42',
+                'name' =>fake()->Name(),
+                'sold_price' => 8400,
+                'phone_number' =>57354654,
+                'note' =>'this is note',
+                'city'=>'this is city ',
+                'street' =>'this is street',
+                'status' =>'sold',
+            ], 
+            [
+                'id'=>22,
+                'user_id'=>2,
+                'created_at'=>'2023-1-2 15:25:42',
+                'name' =>fake()->Name(),
+                'sold_price' => 8400,
+                'phone_number' =>57354654,
+                'note' =>'this is note',
+                'city'=>'this is city ',
+                'street' =>'this is street',
+                'status' =>'sold',
+            ], 
             
            
            ];
