@@ -96,7 +96,7 @@ class DashBoardController extends Controller
         Artisan::call('migrate:fresh', [
             '--force' => true
          ]);
-        Artisan::call('db:seed --class=DatabaseSeeder', [
+        Artisan::call('db:seed', [
             '--force' => true
          ]);
         File::copyDirectory(
