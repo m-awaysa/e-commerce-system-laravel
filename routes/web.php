@@ -46,7 +46,7 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
             Route::post('/add/{category}', [ProductController::class, 'add']);
             Route::get('/delete/{product}', [ProductController::class, 'delete'])->name('product.delete');
             Route::get('/edit/{product}', [ProductController::class, 'viewEdit'])->name('product.edit');
-            Route::post('/edit/{product}', [ProductController::class, 'edit'])->name('product.edit');
+            Route::post('/edit/{product}', [ProductController::class, 'edit']);
         });
 
         //category routes (auth,verified, is_admin)
@@ -56,7 +56,7 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
             Route::post('/add/category', [CategoryController::class, 'store'])->name('category.add.put');
             Route::get('/delete/{category}', [CategoryController::class, 'delete'])->name('category.delete');
             Route::get('/edit/{category}', [CategoryController::class, 'viewEdit'])->name('category.edit');
-            Route::post('/edit/{category}', [CategoryController::class, 'edit'])->name('category.edit');
+            Route::post('/edit/{category}', [CategoryController::class, 'edit']);
         });
 
         //salesman routes (auth,verified, is_admin)
@@ -64,7 +64,7 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
             Route::get('', [SalesmanController::class, 'index'])->name('salesman');
             Route::post('/add', [SalesmanController::class, 'add'])->name('salesman.add');
             Route::get('/edit/{user}', [SalesmanController::class, 'viewEdit'])->name('salesman.edit');
-            Route::post('/edit/{user}', [SalesmanController::class, 'edit'])->name('salesman.edit');
+            Route::post('/edit/{user}', [SalesmanController::class, 'edit']);
             Route::get('/delete/{salesman}', [SalesmanController::class, 'delete'])->name('salesman.delete');
             Route::get('/pendingAccount', [SalesmanController::class, 'viewPendingAccount'])->name('salesman.pendingAccount');
             Route::post('/accept/{user}', [SalesmanController::class, 'accept'])->name('salesman.accept');
@@ -104,7 +104,7 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
             Route::get('/pendingOrder', [OrderController::class, 'viewPendingOrder'])->name('order.pending');
             Route::post('/add/{order}', [OrderController::class, 'ship'])->name('order.ship');
             Route::get('/edit/{order}', [OrderController::class, 'viewEdit'])->name('order.edit');
-            Route::post('/edit/{order}', [OrderController::class, 'edit'])->name('order.edit');
+            Route::post('/edit/{order}', [OrderController::class, 'edit']);
             Route::get('/delete/{order}', [OrderController::class, 'delete'])->name('order.delete');
             Route::post('/completed/{order}', [OrderController::class, 'sold'])->name('order.sold');
             Route::get('/{order}', [OrderController::class, 'show'])->name('order.show');
