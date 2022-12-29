@@ -128,7 +128,7 @@
                         </div>
                         <div>
                             <input type="number" id="modalAmount" name="amount" value="{{old('amount')}}" required
-                                min="1" max="{{$product->amount}}">
+                                min="1">
                             @error('amount')
                             <div class="text-danger">{{$message}}</div>
                             @enderror
