@@ -15,7 +15,7 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-         $schedule->command('migration:dailyfresh')->dailyAt('00:00')->timezone('GMT+2');
+         $schedule->command('migration:dailyfresh')->dailyAt('10:07')->timezone('GMT+2');
          
     }
 
