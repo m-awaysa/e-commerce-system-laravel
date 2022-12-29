@@ -520,14 +520,14 @@ top: 10%;
 }
 
 .home-d-block {
+    left: 10%;
    position: relative;
-  
      height: 100%;
-   max-width: 100%;
+   max-width: 80%;
    width: 100%;
     object-fit: fill;
   
-}
+} 
 .image-side{
     position: absolute !important;
     right: 0%;

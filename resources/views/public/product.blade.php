@@ -17,7 +17,7 @@
                     To Filter</button>
                 <div class="product-filter-body">
 
-                    <div class="select-label-filter  mb-5">
+                    <div class="select-label-filter  mb-5 ms-1">
                         <label for="company[]" class="">Company Name:</label>
                         @if($companies->count())
                         @foreach($companies as $company)
@@ -29,7 +29,7 @@
                         @endif
                     </div>
 
-                    <div class="select-label-filter  mb-5">
+                    <div class="select-label-filter ms-1 mb-5">
 
 
                         <label for="company[]" class="">Color:</label>
@@ -46,7 +46,7 @@
                     </div>
 
 
-                    <div class="select-label-filter  mb-5">
+                    <div class="select-label-filter ms-1 mb-5">
                         <label for="company[]" class="">Category Name:</label>
 
                         @if($categories->count())
@@ -71,13 +71,8 @@
 
         <div class="product-container  border-top">
 
-
+            @if($products)
             @forelse($products as $product)
-
-
-          
-
-
             <div class="card card-product rounded-0">
                 <a class="text-dark" href="{{route('public.products.product',$product)}}">
                     <img src="{{asset('images/productImages/'.$product->image)}}"
@@ -118,20 +113,21 @@
                 </div>
 
             </div>
-          
+
 
 
             @empty
             <p class="text-danger justify-content-md-end">There is no Product!! </p>
             @endforelse
+@endif
             <br>
-          
+
         </div>
-       
+
     </div>
-    <div class="paginate-content" >
-    {{$products-> links()}}
-</div>
+    <div class="paginate-content">
+        {{$products-> links()}}
+    </div>
 </div>
 
 

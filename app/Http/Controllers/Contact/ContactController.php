@@ -28,7 +28,7 @@ class ContactController extends Controller
           Mail::to('theawaysa@gmail.com')->send( new ContactEmail($request->only(['email','mail_body','mail_subject'])));
             
         
-            return redirect()->route('contactUs')->with('message','we receive your mail');
+            return redirect()->route('contactUs')->with('message','we have received your mail');
         }
 
 }
