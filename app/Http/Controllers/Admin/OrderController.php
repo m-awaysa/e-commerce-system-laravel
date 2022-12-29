@@ -37,7 +37,7 @@ class OrderController extends Controller
         ]);
     }
 
-Sale
+
     public function request(StoreOrderRequest $request)
     {
 
