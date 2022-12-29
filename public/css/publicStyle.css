@@ -872,7 +872,7 @@ top: 10%;
     
 .single-product-features{
     position: absolute;
-    top: 107%;
+    top: 125%;
     width :100%;
     height: 7%;
     text-align: left;
@@ -989,13 +989,9 @@ body.body {
     
        
 .single-product-features{
-  
-    top: 105%;
+    top: 125%;
     width :50%;
-    height: 7%;
-   
-   
-   
+    height: 7%; 
 }
 .feature{
     position: absolute;

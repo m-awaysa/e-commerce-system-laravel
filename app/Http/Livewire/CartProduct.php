@@ -31,9 +31,8 @@ class CartProduct extends Component
 
       if (!$user->product()->find($productId)) {
         $user->product()->attach([$productId => ['amount' => 1]]);
+
         $product = Product::find($productId);
-
-
         // this user added this product to cart 
         $user =   User::find(auth()->user()->id); // to use the model method
 
@@ -44,6 +43,7 @@ class CartProduct extends Component
           $user->productActivity->find($product->id)->userActivity->added_to_cart += 1;
           $user->productActivity->find($product->id)->userActivity->save();
         }
+        $this->buttonName="Already in cart";
       }
     } else {
       $product = Product::find($productId);
