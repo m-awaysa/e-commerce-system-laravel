@@ -167,7 +167,7 @@ Route::group([], function () {
     //login,logout and register routes
     Route::group([], function () {
         Route::get('/login', [LoginController::class, 'index'])->name('login');
-        Route::post('/login', [LoginController::class, 'authenticate'])->name('login');
+        Route::post('/login', [LoginController::class, 'authenticate']);
         Route::get('/logout', [LogoutController::class, 'logout'])->name('logout');
         Route::get('/register', [RegisterController::class, 'index'])->name('register');
         Route::post('/register/create', [RegisterController::class, 'create'])->name('register.create');
