@@ -93,12 +93,8 @@ class DashBoardController extends Controller
 
     public function fresh()
     {
-        Artisan::call('migrate:fresh, [
-       '--force' => true
-    ]');
-        Artisan::call('db:seed --class=DatabaseSeeder, [
-       '--force' => true
-    ]');
+        Artisan::call('migrate:fresh');
+        Artisan::call('db:seed --class=DatabaseSeeder');
         File::copyDirectory(
             base_path('./') . '/' . 'public/images/spare',
             base_path('./') . '/' . 'public/images/productImages'
