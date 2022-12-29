@@ -3,9 +3,9 @@
 
 namespace App\Services\Admin;
 use Carbon\Carbon;
-use App\MOdels\Sale;
-use App\MOdels\Product;
-use App\MOdels\User;
+use App\Models\Sale;
+use App\Models\Product;
+use App\Models\User;
 
 class DashboardService {
 
