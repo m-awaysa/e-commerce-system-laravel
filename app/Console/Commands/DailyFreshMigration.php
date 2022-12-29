@@ -28,8 +28,12 @@ class DailyFreshMigration extends Command
      */
     public function handle()
     {
-        Artisan::call('migrate:fresh');
-        Artisan::call('db:seed --class=DatabaseSeeder');
+        Artisan::call('migrate:fresh', [
+       '--force' => true
+    ]);
+        Artisan::call('db:seed --class=DatabaseSeeder', [
+       '--force' => true
+    ]);
         File::copyDirectory(
             base_path('./') . '/' . 'public/images/spare',
             base_path('./') . '/' . 'public/images/productImages'
