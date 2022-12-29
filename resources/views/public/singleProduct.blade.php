@@ -96,10 +96,9 @@
     <livewire:cart-product :product="$product" :buttonName="'Add to cart'"
       classes="single-cart-btn btn btn-dark text-warning">
   </div>
-
-
-
 </div>
+
+
 <div>
   <div class="single-product-features w-100  text-dark border-bottom border-dark ">
     <span class="fw-bold fs-1">Feature:</span>
