@@ -41,14 +41,15 @@ class Sale extends Model
     }
     public function scopeMonthlyEarnings($query)
     {
+      // dd (Carbon::now()->startOfMonth());
         $monthlyEarning = 0;
         $query->whereHas('order', function ($order) {
             $order->where('status', 'sold');
         })->whereBetween('created_at', [Carbon::now()->startOfMonth(), Carbon::now()->endOfMonth()])
             ->each(function ($sale) use (&$monthlyEarning) {
-                $monthlyEarning += (int)(($sale->sold_price - $sale->purchased_price) * $sale->amount);
+                $monthlyEarning += (float)(($sale->sold_price - $sale->purchased_price) * $sale->amount);
             });
-        return $monthlyEarning;
+        return (int)$monthlyEarning;
     }
     public function scopeYearlyEarnings($query)
     {
@@ -57,8 +58,8 @@ class Sale extends Model
             $order->where('status', 'sold');
         })->whereBetween('created_at', [Carbon::now()->startOfYear(), Carbon::now()->endOfYear()])
             ->each(function ($sale) use (&$yearlyEarning) {
-                $yearlyEarning += (int)(($sale->sold_price - $sale->purchased_price) * $sale->amount);
+                $yearlyEarning += (float)(($sale->sold_price - $sale->purchased_price) * $sale->amount);
             });
-        return $yearlyEarning;
+        return (int)$yearlyEarning;
     }
 }

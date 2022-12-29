@@ -469,7 +469,7 @@ class SaleSeeder extends Seeder
 
             [
                 'id'=>58,
-                'created_at'=>'2022-12-10 15:18:12',
+                'created_at'=>'2023-1-1',
                 'sold_price' => 850,
                 'company' => 'AOC',
                 'discount' => 0,
@@ -483,7 +483,7 @@ class SaleSeeder extends Seeder
             ],
             [
                 'id'=>59,
-                'created_at'=>'2023-1-1 15:18:12',
+                'created_at'=>'2023-1-1',
                 'sold_price' => 1450,
                 'company' => 'ASUS',
                 'discount' => 0,
@@ -497,7 +497,7 @@ class SaleSeeder extends Seeder
             ],
             [
                 'id'=>60,
-                'created_at'=>'2022-1-2 15:18:12',
+                'created_at'=>'2023-1-2',
                 'sold_price' => 180,
                 'company' => 'LOGITECH',
                 'discount' => 0,
@@ -511,7 +511,7 @@ class SaleSeeder extends Seeder
             ],
             [
                 'id'=>61,
-                'created_at'=>'2022-1-2 15:18:12',
+                'created_at'=>'2023-1-2',
                 'sold_price' => 1200,
                 'company' => 'GIGABYTE',
                 'discount' => 0,
