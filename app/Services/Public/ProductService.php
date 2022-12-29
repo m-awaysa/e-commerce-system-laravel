@@ -11,7 +11,7 @@ class ProductService
 {
 
     public function get_the_product(
-        ?Category $category ,
+        ?Category $category,
         $filteredCategory,
         $filteredCompany,
         $filteredColor
@@ -19,47 +19,45 @@ class ProductService
         if ($category == null) {
             if ($filteredCategory  != null ||  $filteredCompany  != null ||  $filteredColor  != null) {
 
-                if ($filteredCategory  != null){
+                if ($filteredCategory  != null) {
                     $products = Product::where('visibility', true)
-                    ->with(['category' => function ($query) {
-                        $query->where('visibility', true);
-                    }])
-                    ->whereIn('category_id',  $filteredCategory)->paginate(12);
-                }
-                   
-                else
+                        ->whereIn('category_id',  $filteredCategory)->get()
+                        ->where(function($query){
+                            return $query->category;
+                        })->paginate(12);
+                } else
                     $products = null;
 
                 if ($filteredCompany  != null) {
-                  
-                    if ($products !=null)
+
+                    if ($products != null)
                         $products = $products->whereIn('company',  $filteredCompany)->paginate(12);
-                    else{
+                    else {
                         $products = Product::where('visibility', true)
-                        ->with(['category' => function ($query) {
-                            $query->where('visibility', true);
-                        }])
-                        ->whereIn('company',  $filteredCompany)->paginate(12);
+                            ->whereIn('company',  $filteredCompany)->get()->where(function($query){
+                                return $query->category;
+                            })->paginate(12);
                     }
                 }
                 if ($filteredColor != null) {
 
                     if ($products  != null)
                         $products = $products->whereIn('color',  $filteredColor)->paginate(12);
-                    else{
+                    else {
                         $products = Product::where('visibility', true)
-                        ->with(['category' => function ($query) {
-                            $query->where('visibility', true);
-                        }])
-                        ->whereIn('color',  $filteredColor)->paginate(12);
+                            ->whereIn('color',  $filteredColor)->get()->where(function($query){
+                                return $query->category;
+                            })->paginate(12);
                     }
-                       
                 }
             } else {
 
                 $products = Product::where('visibility', true)->with(['category' => function ($query) {
                     $query->where('visibility', true);
-                }])->paginate(12);
+                }])->get()->where(function($query){
+                    return $query->category;
+                })->paginate(12);
+ 
             }
         } else {
             $products = $category->product->where('visibility', true)->paginate(12);
@@ -68,7 +66,8 @@ class ProductService
         return $products;
     }
 
-    public function this_customer_clicked_this_product(Product $product){
+    public function this_customer_clicked_this_product(Product $product)
+    {
         if (auth()->user()) {
             $user = User::find(auth()->user()->id);
             if (!$user->productActivity->find($product->id))
@@ -77,7 +76,7 @@ class ProductService
                 $user->productActivity->find($product->id)->userActivity->click += 1;
                 $user->productActivity->find($product->id)->userActivity->save();
             }
-        }else{
+        } else {
             //id=1 reserved for guests
             $user = User::find(1);
             if (!$user->productActivity->find($product->id))

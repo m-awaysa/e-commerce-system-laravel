@@ -75,7 +75,7 @@
             @forelse($products as $product)
 
 
-            @if($product->category)
+          
 
 
             <div class="card card-product rounded-0">
@@ -118,7 +118,7 @@
                 </div>
 
             </div>
-            @endif
+          
 
 
             @empty
