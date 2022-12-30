@@ -502,14 +502,15 @@ top: 10%;
     background-color: #ffffff !important;
 }
 .home-carousel-inner{
+  
     position: absolute !important;
     height: 100% !important;
     width: 100% !important;
-     background-color: #ffffff !important; 
+     background-color: #ffffff !important;   
   
-   
-   
-   
+}
+.home-carousel{
+    background-color:var(--bs-body-color);
 }
 .carousel-item{
 
@@ -1151,9 +1152,9 @@ body.body {
 
 .home-d-block {
   
-    left: 0%;
+    left: 10%;
      height: 100%;
-     width: 100%;
+     width: 80%;
     object-fit: contain;
   
 }
