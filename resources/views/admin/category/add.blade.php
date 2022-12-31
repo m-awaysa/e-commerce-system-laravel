@@ -5,14 +5,15 @@
 <div class="m-3">
     <form action="{{route('category.add.put')}}" method="post" enctype="multipart/form-data">
         @csrf
-       
-        
+
+
 
         <div class="row">
             <div>
                 <div>
 
-                    <img width="300" src="{{asset('images/default.png')}}" onerror="this.src='  <?php echo asset('images/default.png') ?>  ' " alt="no img">
+                    <img width="300" src="{{asset('images/default.png')}}"
+                        onerror="this.src='  <?php echo asset('images/default.png') ?>  ' " alt="no img">
 
                 </div>
 
@@ -43,7 +44,7 @@
                 <!--Description-->
                 <div>
                     <label for="description">Description: </label>
-                    <textarea type="text" name="description" >{{old('description')}}</textarea>
+                    <textarea type="text" name="description">{{old('description')}}</textarea>
                     @error('description')
                     <div class="text-danger">{{$message}}</div>
                     @enderror
@@ -67,19 +68,19 @@
             <h4>Features:</h1>
 
 
-         <!------------------------------------------------------------------------------------------------------------>
+                <!------------------------------------------------------------------------------------------------------------>
                 <div>
                     <div>
                         <div class="col-lg-12">
-                            
+
 
                             <div id="newinput"></div>
                             @error('feature')
-                                    <div class="text-danger">{{$message}}</div>
-                                    @enderror
-                                    @error('feature*')
-                                    <div class="text-danger">{{$message}}</div>
-                                    @enderror
+                            <div class="text-danger">{{$message}}</div>
+                            @enderror
+                            @error('feature*')
+                            <div class="text-danger">{{$message}}</div>
+                            @enderror
                             <button id="rowAdder" type="button" class="btn btn-dark">
                                 <span class="bi bi-plus-square-dotted">
                                 </span> ADD Feature
@@ -94,13 +95,11 @@
 
 
         <div class="mt-2">
-            <button type="submit" class="btn btn-primary">Add category</button>
+            <button type="submit"  class="btn btn-primary">Add category</button>
         </div>
 
     </form>
 </div>
-
-
 
 
 @include('layouts.adminFooter')

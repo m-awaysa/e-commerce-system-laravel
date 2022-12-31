@@ -12,6 +12,7 @@ use Exception;
 
 class CategoryController extends Controller
 {
+    static string $name='';
     public function index()
     {
        $categories = Category::paginate(30);       
@@ -28,7 +29,7 @@ class CategoryController extends Controller
 
     public function store(StoreCategoryRequest $request, CategoryService $service)
     {
-       
+    
         $service->store(
             $request->file('image'),
             $request->category_name,
@@ -36,6 +37,8 @@ class CategoryController extends Controller
             $request->has('visibility'),
             $request->feature
         );
+    
+
         return redirect()->route('category')->with('success', 'Category added.');
     }
 

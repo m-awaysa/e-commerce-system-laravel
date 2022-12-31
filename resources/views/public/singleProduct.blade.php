@@ -59,11 +59,10 @@
 
         @if($product->discount)
         <span id="price">:{{$product->price}}-></span>
-        <?php echo (int)($product->price - ((($product->discount) / 100) * $product->price)) ?>
+        <?php echo (int)($product->price - ((($product->discount) / 100) * $product->price)) ?>₪
         @else
-        <p class="price-no-discount">:{{$product->price}}</p>
+        <p class="price-no-discount">:{{$product->price}}₪</p>
         @endif
-
       </td>
     </tr>
 

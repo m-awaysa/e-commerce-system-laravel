@@ -73,12 +73,12 @@
             <div class="product-price bg-light text-warning">
               @if($product->discount && ($product->discount > auth()->user()->discount))
               <span class="old-price ">{{$product->price}}-></span>
-              <?php echo (int)($product->price - ((($product->discount) / 100) * $product->price)) ?>
+              <?php echo (int)($product->price - ((($product->discount) / 100) * $product->price)) ?>₪
               @elseif(auth()->user()->discount)
               <span class="old-price ">{{$product->price}}-></span>
-              <?php echo (int)($product->price - (((auth()->user()->discount) / 100) * $product->price)) ?>
+              <?php echo (int)($product->price - (((auth()->user()->discount) / 100) * $product->price)) ?>₪
               @else
-              <p class="text-center price-no-discount">{{$product->price}}</p>
+              <p class="text-center price-no-discount">{{$product->price}}₪</p>
               @endif
             </div>
             @endauth
