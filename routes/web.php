@@ -1,29 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Admin\DashBoardController;
-use App\Http\Controllers\Admin\ProductController;
-use App\Http\Controllers\Admin\CategoryController;
-use App\Http\Controllers\Admin\SalesmanController;
-use App\Http\Controllers\Admin\LayoutController;
-// use App\Http\Controllers\Admin\SaleController;
-use App\Http\Controllers\Admin\OrderController;
-
-use App\Http\Controllers\Public\HomeController;
-use App\Http\Controllers\Public\PublicProductController;
-use App\Http\Controllers\Public\PublicCategoryController;
-use App\Http\Controllers\Public\GuestOrderController;
-
-
-use App\Http\Controllers\User\DiscountController;
-use App\Http\Controllers\User\CartController;
-
-use App\Http\Controllers\Auth\LoginController;
-use App\Http\Controllers\Auth\LogoutController;
-use App\Http\Controllers\Auth\RegisterController;
-use App\Http\Controllers\Auth\PasswordResetController;
-use App\Http\Controllers\Auth\EmailVerificationController;
-
+use App\Http\Controllers\Admin\{DashBoardController, OrderController, ProductController, CategoryController, SalesmanController, LayoutController};
+use App\Http\Controllers\Public\{HomeController, PublicProductController, PublicCategoryController, GuestOrderController};
+use App\Http\Controllers\User\{DiscountController, CartController};
+use App\Http\Controllers\Auth\{LoginController, LogoutController, RegisterController, PasswordResetController, EmailVerificationController };
 use App\Http\Controllers\Contact\ContactController;
 
 Route::group(['middleware' => ['auth', 'verified']], function () {
