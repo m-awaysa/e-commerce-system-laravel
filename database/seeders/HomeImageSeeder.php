@@ -19,19 +19,19 @@ class HomeImageSeeder extends Seeder
             [
                 'id'=>1,
 
-                'image' =>'QDBrSsooep17ZBFDsdrU6gS8Pdv5P4koHct2woZs.png',
+                'image' =>'QDBrSsooep17ZBFDsdrU6gS8Pdv5P4koHct2woZs1.png',
                 'active' =>1,
             ],
             [
                 'id'=>2,
              
-                'image' =>'elYz4XsHFmUzSU7vHcMoAKf88B8OscN4VBo6ECPs.png',
+                'image' =>'elYz4XsHFmUzSU7vHcMoAKf88B8OscN4VBo6ECPs1.png',
                 'active' =>1,
             ],
             [
                 'id'=>3,
          
-                'image' =>'6xdZf6l63RMqLbXRF46iFLX7bCy5wwz6gik81w9x.png',
+                'image' =>'6xdZf6l63RMqLbXRF46iFLX7bCy5wwz6gik81w9x1.png',
                 'active' =>1,
             ],
             
