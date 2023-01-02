@@ -1,10 +1,10 @@
 @if($product->amount > 0)
-<form wire:submit.prevent="add({{$product->id}}) " class="{{$classes}}">
+<form wire:submit.prevent="add({{$product->id}})" class="{{$classes}}">
         @csrf
-        <button class="w-100 rounded-0 text-warning border-0 btn ">
+        <button class="w-100 rounded-0 text-warning border-0 btn">
         {{$buttonName}}
         @if($buttonName == '')
-            <i class="fa-solid fa-cart-shopping  text-dark"></i>
+            <i class="fa-solid fa-cart-shopping text-dark "></i>
         @endif
         </button>
     </form>
