@@ -150,7 +150,7 @@
             <li class="list-group-item">Guest can order product by clicking on order button and fill the form that
                 appears</li>
             <img src="{{asset('images/guest-order-modal.png')}}" alt="..." style="max-width:100%; ">
-            <li class="list-group-item">he quantity does not change on guest request</li>
+            <li class="list-group-item">The quantity does not change on guest request</li>
         </ol>
 
         <h3>Public Site</h3>
